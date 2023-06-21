@@ -2,6 +2,7 @@
   <nav>
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="//imagens\logoEstacionamento.jpg" class="resized-image">
         <a class="navbar-brand" href="#">Estacionamento Mercosul</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -20,6 +21,18 @@
             
             <li class="nav-item">
               <router-link to="/configuracao"><a class="nav-link" href="#">Configuracao</a></router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/marca"><a class="nav-link" href="#">Marca</a></router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/modelo"><a class="nav-link" href="#">Modelo</a></router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/movimentacao"><a class="nav-link" href="#">Movimentacao</a></router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/veiculo"><a class="nav-link" href="#">Veiculo</a></router-link>
             </li>
           </ul>
         </div>

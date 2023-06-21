@@ -12,7 +12,7 @@
     <div class="row">
       <div class="col-lg-8">
         <h1>Bem-vindo ao Estacionamento Mercosul</h1>
-        <p>Este é um exemplo de página responsiva usando o Bootstrap.</p>
+        <p>Frase de efeito muito boa.</p>
       </div>
       <div class="col-lg-4">
         <div class="card">
@@ -24,7 +24,7 @@
                 <input type="text" class="form-control" id="nome">
               </div>
               <div class="form-group">
-                <label for="placa">Placa do veículo</label>
+                <label for="placa">Numero</label>
                 <input type="text" class="form-control" id="placa">
               </div>
               <button type="submit" class="btn btn-primary">Reservar</button>
