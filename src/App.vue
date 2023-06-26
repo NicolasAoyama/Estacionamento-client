@@ -1,55 +1,59 @@
 <template>
-  <nav>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <img src="//imagens\logoEstacionamento.jpg" class="resized-image">
-        <a class="navbar-brand" href="#">Estacionamento Mercosul</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <router-link to="/"><a class="nav-link" href="#">Home</a></router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/about"><a class="nav-link" href="#">Sobre</a></router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/condutor"><a class="nav-link" href="#">Condutor</a></router-link>
-            </li>
-            
-            <li class="nav-item">
-              <router-link to="/configuracao"><a class="nav-link" href="#">Configuracao</a></router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/marca"><a class="nav-link" href="#">Marca</a></router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/modelo"><a class="nav-link" href="#">Modelo</a></router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/movimentacao"><a class="nav-link" href="#">Movimentacao</a></router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/veiculo"><a class="nav-link" href="#">Veiculo</a></router-link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+    
+    <ul class="nav nav-pills nav-fill">
+
+      <li class="nav-item">
+        <router-link to="/" class="nav-link">Home</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link to="/Listar-Condutor" class="nav-link">Condutor</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link to="/Listar-Configuracao" class="nav-link">Configuração</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link to="/Entrada" class="nav-link">Entrada</router-link>      
+      </li>
+      <li class="nav-item">
+        <router-link to="/listarmarca" class="nav-link">Marca</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link to="/Listar-Modelo" class="nav-link">Modelo</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link to="/Movimentacao" class="nav-link">Movimentação</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link to="/Listar-Veiculo" class="nav-link">Veiculos</router-link>
+      </li>
+
+      
+     
+    </ul>
   </nav>
+
+
   <router-view/>
+  
 </template>
 
+
+
 <style lang="scss">
+
+
 // Variable overrides first
 $primary: #900;
 $enable-shadows: true;
 $prefix: "mo-";
 
+
+
 // Then import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import url();
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -71,4 +75,18 @@ nav {
     }
   }
 }
+
+.nav-link{
+  color: #FFFFFF;
+}
+
+body {
+    background-color: black;
+    padding-top: 90px; /* ou qualquer valor que seja a altura da sua navbar */
+  }
+
+.custom-text-color{
+  color: #FFFFFF;
+}
+
 </style>

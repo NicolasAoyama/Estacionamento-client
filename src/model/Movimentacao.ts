@@ -1,21 +1,23 @@
 import { AbstractEntity } from "./AstractEntity";
-import { Condutor } from "./Condutor";
+import { Pessoa } from "./Pessoa";
 import { Veiculo } from "./Veiculo";
 
 export class Movimentacao extends AbstractEntity{
-    veiculo! : Veiculo
-    condutor! : Condutor
-    entrada! : Date
-    saida! : Date
-    tempoTotalHora! : number
-    tempoMultaMinuto! : number
-    tempoMultaHora! : number
-    tempoDesconto! : number
-    valorDesconto! : number
-    valorHora! : number
-    valorMulta! : number
-    valorTotal! : number
-    valorHoraMulta! : number
-
-
+   
+    veiculo!: Veiculo;
+    condutor!: Pessoa;
+    horaatual!: Date;
+    entrada!: Date;
+    saida!: Date;
+    tempototalhora!: number;
+    tempototalminuto!: number;
+    tempodesconto!: number;
+    tempomultaminuto!: number;
+    tempomultahora!: number;
+    valordesconto!: number;
+    valormulta!: number;
+    valortotal!:number;
+    valorhora!: number;
+    valorhoramulta!: number;
+    
 }
