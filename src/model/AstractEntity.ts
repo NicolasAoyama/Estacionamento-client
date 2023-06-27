@@ -1,6 +1,6 @@
 export class AbstractEntity{
     id! : number
-    cadastro! : Date
-    atualizado! : Date
+    dtCadastro! : Date
+    dtAtualizacao! : Date
     ativo! : boolean
 }

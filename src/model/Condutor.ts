@@ -5,6 +5,6 @@ export class Condutor extends AbstractEntity{
     cpf! : string
     telefone! : string
     tempoPago! : number
-    tempoTotal! : number
     tempoDesconto! : number
+    tempoTotal! : number
 }
