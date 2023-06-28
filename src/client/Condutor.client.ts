@@ -24,7 +24,7 @@ export class CondutorClient{
     }
     public  async listAll() : Promise<Condutor[]>{
         try{
-            return (await this.axiosClient.get<Condutor[]> ('/lista')).data
+            return (await this.axiosClient.get<Condutor[]> (`/lista`)).data
         }
         catch(error: any){
             return Promise.reject(error.response)

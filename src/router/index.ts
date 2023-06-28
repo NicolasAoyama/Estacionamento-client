@@ -25,7 +25,7 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Marca/AddMarca.vue'),
     children: [{
       path: 'AddMarca',
-      name: 'EditarMarca',
+      name: 'AddMarca-editar',
       component: () => import(/* webpackChunkName: "about" */ '../views/Marca/AddMarca.vue'),
     },
     {
@@ -66,18 +66,18 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Condutor/ListCondutor.vue')
   },
   {
-    path: '/AddCondutor',
-    name: 'AddCondutor',
+    path: '/Adicionar-Condutor',
+    name: 'Adicionar-Condutor',
     component: () => import(/* webpackChunkName: "about" */ '../views/Condutor/AddCondutor.vue'),
     children: [
       {
-        path: '/AddCondutor',
-        name: 'EditarCondutor',
+        path: '/Adicionar-Condutor-editar',
+        name: 'Adicionar-Condutor-editar',
         component: () => import(/* webpackChunkName: "about" */ '../views/Condutor/AddCondutor.vue')
       },
       {
-        path: '/AddCondutor',
-        name: 'ExcluirCondutor',
+        path: '/Adicionar-Condutor-excluir',
+        name: 'Adicionar-Condutor-excluir',
         component: () => import(/* webpackChunkName: "about" */ '../views/Condutor/AddCondutor.vue')
       },
 
