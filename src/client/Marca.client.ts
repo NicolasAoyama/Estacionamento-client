@@ -15,9 +15,8 @@ export class MarcaClient {
 
     public  async findbyid(id:number) : Promise<Marca>{
         try{
-            return (await this.axiosClient.get<Marca> (`/${id}`)).data
-        }
-        catch(error: any){
+            return (await this.axiosClient.get<Marca>("",{params:{id} })).data;
+        }   catch(error: any){
             return Promise.reject(error.response)
         }
     }
@@ -61,7 +60,7 @@ export class MarcaClient {
 
     public async delete (id:number) : Promise<string>{
         try{
-            return (await this.axiosClient.delete<string>(`/${id}`)).data
+            return (await this.axiosClient.delete<string>("",{params:{id}})).data;
 
         }
         catch(error:any)
@@ -70,6 +69,13 @@ export class MarcaClient {
 
         }
     }
+
+
+
+
+
+
+
 
 
 }

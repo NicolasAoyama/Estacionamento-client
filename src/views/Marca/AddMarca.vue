@@ -27,16 +27,16 @@
             
             
             <div v-if="form === undefined" class="col-12">
-                <button  class="btn btn-success " @click="onClickCadastrar" >Adicionar</button>
+              <router-link to="/ListMarca"  class="btn btn-success " @click="onClickCadastrar" >Adicionar</router-link>
             </div>
             
             <div v-if="form === 'excluir'" class="d-flex justify-content-center ">
                 <div class="row ">
                     <div class="col-5">
-                        <button  class="btn btn-primary "  @click="onClickExcluir" >Excluir</button>
+                      <router-link to="/ListMarca"  class="btn btn-primary "  @click="onClickExcluir" >Excluir</router-link>
                     </div>
                     <div class="col-5">
-                      <router-link to="/listarmarca" class="btn btn-info " >Voltar</router-link>
+                      <router-link to="/ListMarca" class="btn btn-info " >Voltar</router-link>
                     </div>
                 </div>
 
@@ -45,10 +45,10 @@
             <div v-if="form === 'editar'" class="d-flex justify-content-center ">
                 <div class="row ">
                   <div class="col-5">
-                        <button class="btn btn-warning"  @click="onClickEditar" >Editar</button>
+                    <router-link to="/ListMarca" class="btn btn-warning"  @click="onClickEditar" >Editar</router-link>
                   </div>
                     <div class="col-5">
-                        <router-link to="/listarmarca" class="btn btn-info " >Voltar</router-link>
+                        <router-link to="/ListMarca" class="btn btn-info " >Voltar</router-link>
                     </div>
                 </div>
 
@@ -108,9 +108,6 @@ export default defineComponent({
           this.mensagem.titulo = "Parabens. ";
           this.mensagem.css = "alert alert-success alert-dismissible fade show";
 
-          setTimeout(() => {
-            this.$router.push({ name: 'listarmarca' });
-           }, 50000); // Transição para a outra página após 2 segundos (ajuste o valor conforme necessário)
     })
         .catch(error => {
           this.mensagem.ativo = true;

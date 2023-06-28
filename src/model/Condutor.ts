@@ -4,7 +4,7 @@ export class Condutor extends AbstractEntity{
     nomeCondutor! : string
     cpf! : string
     telefone! : string
-    tempoPago! : number
-    tempoDesconto! : number
-    tempoTotal! : number
+    tempoPago! : Number
+    tempoDesconto! : Number
+    tempoTotal! : Number
 }

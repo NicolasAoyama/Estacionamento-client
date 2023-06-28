@@ -16,12 +16,17 @@ export class CondutorClient{
 
     public  async findbyid(id:number) : Promise<Condutor>{
         try{
-            return (await this.axiosClient.get<Condutor> (`/${id}`)).data
+            return (await this.axiosClient.get<Condutor>("",{params:{id}})).data
         }
         catch(error: any){
             return Promise.reject(error.response)
         }
     }
+
+
+
+
+
     public  async listAll() : Promise<Condutor[]>{
         try{
             return (await this.axiosClient.get<Condutor[]> (`/lista`)).data
