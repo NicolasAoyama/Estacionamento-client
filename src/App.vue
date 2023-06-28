@@ -1,20 +1,12 @@
 <template>
 
   <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
-    
     <ul class="nav nav-pills nav-fill">
-
       <li class="nav-item">
         <router-link to="/" class="nav-link">Home</router-link>
       </li>
       <li class="nav-item">
         <router-link to="/ListCondutor" class="nav-link">Condutor</router-link>
-      </li>
-      <li class="nav-item">
-        <router-link to="/ListConfiguracao" class="nav-link">Configuração</router-link>
-      </li>
-      <li class="nav-item">
-        <router-link to="/Entrada" class="nav-link">Entrada</router-link>      
       </li>
       <li class="nav-item">
         <router-link to="/ListMarca" class="nav-link">Marca</router-link>
@@ -23,10 +15,16 @@
         <router-link to="/ListModelo" class="nav-link">Modelo</router-link>
       </li>
       <li class="nav-item">
-        <router-link to="/ListMovimentacao" class="nav-link">Movimentação</router-link>
+        <router-link to="/ListVeiculo" class="nav-link">Veiculos</router-link>
       </li>
       <li class="nav-item">
-        <router-link to="/ListVeiculo" class="nav-link">Veiculos</router-link>
+        <router-link to="/ListConfiguracao" class="nav-link">Configuração</router-link>
+      </li>
+      <li class="nav-item">
+        <router-link to="/Entrada" class="nav-link">Entrada</router-link>      
+      </li>
+      <li class="nav-item">
+        <router-link to="/ListMovimentacao" class="nav-link">Movimentação</router-link>
       </li>
 
       
@@ -45,7 +43,7 @@
 
 
 // Variable overrides first
-$primary: #900;
+$primary: #b7023f;
 $enable-shadows: true;
 $prefix: "mo-";
 
@@ -60,7 +58,7 @@ $prefix: "mo-";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #b7023f;
 }
 
 nav {
@@ -68,10 +66,10 @@ nav {
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #b7023f;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #b7023f;
     }
   }
 }
@@ -81,8 +79,8 @@ nav {
 }
 
 body {
-    background-color: black;
-    padding-top: 90px; /* ou qualquer valor que seja a altura da sua navbar */
+    background-color: #e7dd96;
+    padding-top: 90px; 
   }
 
 .custom-text-color{

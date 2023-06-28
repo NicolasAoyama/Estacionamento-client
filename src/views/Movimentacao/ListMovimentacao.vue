@@ -3,7 +3,7 @@
 
     <div class="container">
           <div class="d-flex justify-center align-items-center bg-dark">
-            <h2 class="col-10 display-3 custom-text-color " >Lista de Movimentaçoes</h2>
+            <h2 class="col-10 display-3 custom-text-color " >Movimentaçoes</h2>
           </div>
          
           

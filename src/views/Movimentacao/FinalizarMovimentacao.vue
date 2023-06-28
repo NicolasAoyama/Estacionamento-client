@@ -3,24 +3,15 @@
     <div class="container">
   
       <div class="text-center mb-5">
-        <h1 class="display-4 custom-text-color">Registrar Saida</h1>
+        <h1 class="display-4 custom-text-color">Finalizar Movimentacao</h1>
       </div>
-  
-      
-  
-  
       <table class="table table-bordered table-dark">
-  
         <thead >
           <tr>
             <th class="col-4"> Condutor</th>
             <th class="col-4"> Veiculo</th>
-            <th class="col-4"> Hora Entrada</th>
-                      
-
-            
+            <th class="col-4"> Movimentacao</th>         
           </tr>
-  
         </thead>
   
         <tbody >
@@ -28,8 +19,8 @@
           <tr  scope="row">
 
             <td v-if="movimentacao.condutor"> 
-                <td>Nome: {{ movimentacao.condutor.nomeCondutor}}</td><br>
-                <td>Cpf: {{ movimentacao.condutor.cpf }} </td><br>
+                <td>Nome: {{ movimentacao.condutor.nomeCondutor}}</td><br><br><br>
+                <td>Cpf: {{ movimentacao.condutor.cpf }} </td><br><br><br>
                 <td>Telefone: {{ movimentacao.condutor.telefone}}</td>
             </td>
 
@@ -41,7 +32,8 @@
                 <td>Ano: {{ movimentacao.veiculo.ano}}</td><br>
             </td>
             <td>
-              <td>Entrada: {{movimentacao.entrada}}</td>
+              <td>Entrada: {{movimentacao.entrada}}</td><br>
+              <td>Saida: {{movimentacao.saida}}</td>
               <br>
     
               
@@ -204,9 +196,12 @@ methods: {
   onClickRegistraSaida(){
       
       this.MovimentacaoClient.finalizar(this.movimentacao.id)
+      
         .then(sucess => {
            
             this.movimentacao = new Movimentacao();
+            this.movimentacao.tempoTotalHora = 10;
+            this.movimentacao.valorTotal = 20;
             this.mensagem.ativo = true;
             this.mensagem.mensagem = sucess;
             this.mensagem.titulo = "Parabens. ";
@@ -218,7 +213,6 @@ methods: {
             this.mensagem.titulo = "Error. ";
             this.mensagem.css = "alert alert-danger alert-dismissible fade show";
           });
-
     } 
   
 

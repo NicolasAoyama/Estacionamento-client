@@ -1,14 +1,8 @@
 <template>
     <div class="container col-5 mt-5 bg-notinha">
 
-        <h1 class="mt-4">Recibo <br> Estacionamento do Semestre</h1>
+        <h1 class="mt-4">Recibo <br> Estacionamento Mercosul</h1>
       
-        <div class="row">
-            <div class="col-md-12 text-end">
-                <p class="fw-bold">Número do Recibo: 001</p>
-                <p>Data: 16/06/2023</p>
-            </div>
-        </div>
         
         
         <div class="dashed-line"></div>
@@ -140,9 +134,6 @@
 
         <div class="row mt-3">
 
-            <div class="row justify-content-center mt-4">
-                <button type="button" class="btn btn-primary mt-4 col-6" data-bs-toggle="modal" data-bs-target="#modalRecibo">Imprimir Recibo</button>
-             </div>
             <div class="row justify-content-center mt-2">
                 <router-link to="/ListMovimentacao" class="btn btn-primary-voltar mt-4 col-6">Voltar</router-link>
             </div>
@@ -301,7 +292,7 @@ methods: {
 
 <style>
 .bg-notinha{
-    background-color: rgba(255, 255, 84, 0.856);
+    background-color: #f5e2b8;
     color: black;
 
 }

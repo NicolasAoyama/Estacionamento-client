@@ -69,14 +69,5 @@ export class MarcaClient {
 
         }
     }
-
-
-
-
-
-
-
-
-
 }
   

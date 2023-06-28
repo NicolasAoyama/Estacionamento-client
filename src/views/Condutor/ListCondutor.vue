@@ -3,7 +3,7 @@
 
     <div class="container">
           <div class="d-flex justify-center align-items-center bg-dark">
-            <h2 class="col-10 display-3 custom-text-color " >Lista de Condutor</h2>
+            <h2 class="col-10 display-3 custom-text-color " >Condutores</h2>
             <div class="col-2">
               <router-link to="/Adicionar-Condutor" class="btn btn-success  " >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">

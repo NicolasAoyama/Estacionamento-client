@@ -3,28 +3,28 @@
   <div class="container">
 
     <div class="text-center mb-5">
-        <h1 class="display-4 custom-text-color">Bem Vindo ao Estacionamento</h1>
-        <h5 class=" custom-text-color">Otimo dia de Trabalho</h5>
+        <h1 class="display-4 custom-text-color">Estacionamento Mercosul</h1>
+        <img src="@/assets/EstacionamentoLogo.jpg" class="LogoE" alt="Logo do Estacionamento">
         <div id="clock"></div>
 
 
     </div>
-
-    <div class="col-12 mt-4 mb-4">
-      <router-link to="/Entrada" class="btn btn-success btn-lg col-6" >Registrar Entrada</router-link>
-    </div>
-
-
+    <div class="d-flex justify-center align-items-center bg-dark">
+            <h2 class="d-flex justify-center align-items-center custom-text-color " >Movimentacoes Abertas</h2>
+            <div class="col-2">
+            </div>
+          </div>
     <table class="table table-bordered table-dark">
 
       <thead >
         <tr>
+
           <th class="col-4"> Condutor</th>
           <th class="col-4"> Placa</th>
           <th class="col-5"> Hora Entrada</th>
           <th >Registrar Saida</th>
         </tr>
-
+      
       </thead>
 
       <tbody v-for="entrada in movimentacaoLista" :key="entrada.id" >
@@ -155,6 +155,11 @@ methods: {
     background-repeat: no-repeat;
     background-position: center;
     color: transparent;
+}
+.LogoE{
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 50%;
 }
   </style>
   
