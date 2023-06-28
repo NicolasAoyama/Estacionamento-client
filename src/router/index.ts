@@ -1,49 +1,142 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: () => import('../views/HomeView.vue')
   },
   {
-    path: '/about',
-    name: 'about',
+    path: '/Entrada',
+    name: 'Entrada',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/Entrada.vue')
   },
   {
-    path: '/condutor',
-    name: 'condutor',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Condutor.vue')
+    path: '/ListMarca',
+    name: 'ListMarca',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Marca/ListMarca.vue')
   },
   {
-    path: '/configuracao',
-    name: 'configuracao',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Configuracao.vue')
+    path: '/AddMarca',
+    name: 'AddMarca',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Marca/AddMarca.vue'),
+    children: [{
+      path: 'AddMarca',
+      name: 'EditarMarca',
+      component: () => import(/* webpackChunkName: "about" */ '../views/Marca/AddMarca.vue'),
+    },
+    {
+      path: 'AddMarca',
+      name: 'ExcluirMarca',
+      component: () => import(/* webpackChunkName: "about" */ '../views/Marca/AddMarca.vue'), 
+    }
+
+    ]
   },
   {
-    path: '/marca',
-    name: 'marca',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Marca.vue')
+    path: '/AddVeiculo',
+    name: 'AddVeiculo',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Veiculo/AddVeiculo.vue'),
+    children: [
+      {
+        path: '/AddVeiculo',
+        name: 'EditarVeiculo',
+      component: () => import(/* webpackChunkName: "about" */ '../views/Veiculo/AddVeiculo.vue'),
+      }, 
+      {
+        path: '/AddVeiculo',
+        name: 'ExcluirVeiculo',
+      component: () => import(/* webpackChunkName: "about" */ '../views/Veiculo/AddVeiculo.vue'),
+      }
+    ]
+
+    
   },
   {
-    path: '/modelo',
-    name: 'modelo',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Modelo.vue')
+    path: '/ListVeiculo',
+    name: 'ListVeiculo',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Veiculo/ListVeiculo.vue')
   },
   {
-    path: '/movimentacao',
-    name: 'movimentacao',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Movimentacao.vue')
+    path: '/ListCondutor',
+    name: 'ListCondutor',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Condutor/ListCondutor.vue')
   },
   {
-    path: '/veiculo',
-    name: 'veiculo',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Veiculo.vue')
+    path: '/AddCondutor',
+    name: 'AddCondutor',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Condutor/AddCondutor.vue'),
+    children: [
+      {
+        path: '/AddCondutor',
+        name: 'EditarCondutor',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Condutor/AddCondutor.vue')
+      },
+      {
+        path: '/AddCondutor',
+        name: 'ExcluirCondutor',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Condutor/AddCondutor.vue')
+      },
+
+    ]
+  },
+  {
+    path: '/AddModelo',
+    name: 'AddModelo',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Modelo/AddModelo.vue'),
+    children: [
+      {
+        path: '/AddModelo',
+        name: 'EditarModelo',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Modelo/AddModelo.vue')
+
+      },
+      {
+        path: '/AddModelo',
+        name: 'ExcluirModelo',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Modelo/AddModelo.vue')
+
+      },
+
+    ]
+  },
+  {
+    path: '/ListModelo',
+    name: 'ListModelo',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Modelo/ListModelo.vue')
+  },
+  {
+    path: '/ListConfiguracao',
+    name: 'ListConfiguracao',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Configuracao/ListConfiguracao.vue')
+  },
+  {
+    path: '/AddConfiguracao',
+    name: 'AddConfiguracao',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Configuracao/AddConfiguracao.vue'),
+    children: [
+    {
+      path: '/AddConfiguracao',
+       name: 'EditarConfiguracao',
+      component: () => import(/* webpackChunkName: "about" */ '../views/Configuracao/AddConfiguracao.vue')
+
+    }, 
+    
+
+    ]
+  },
+  {
+    path: '/ListMovimentacao',
+    name: 'ListMovimentacao',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Movimentacao/ListMovimentacao.vue')
+  },
+  {
+    path: '/FinalMovimentacao',
+    name: 'FinalMovimentacao',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Movimentacao/FinalMovimentacao.vue')
   }
 ]
 

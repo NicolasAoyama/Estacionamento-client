@@ -38,7 +38,7 @@
 
             <div v-if="form === undefined" class="row justify-content-center mt-3 mb-3 col-3">
 
-                <router-link to="/Listar-Condutor" class="btn btn-success " @click="onClickCadastrar" >Adicionar</router-link>
+                <router-link to="/ListCondutor" class="btn btn-success " @click="onClickCadastrar" >Adicionar</router-link>
 
             </div>
 
@@ -46,11 +46,11 @@
                 <div class="row ">
                     
                     <div class="col-5">
-                        <router-link to="/Listar-Condutor" class="btn btn-primary" @click="onClickExcluir">Excluir</router-link>
+                        <router-link to="/ListCondutor" class="btn btn-primary" @click="onClickExcluir">Excluir</router-link>
                     </div>
                 
                     <div class="col-5">
-                        <router-link to="/Listar-Condutor" class="btn btn-info">Voltar</router-link>
+                        <router-link to="/ListCondutor" class="btn btn-info">Voltar</router-link>
                         
                     </div>
                 </div>
@@ -62,10 +62,10 @@
                 <div class="row ">
                     
                 <div v-if="form === 'editar'" class="col-5">
-                        <router-link to="/Listar-Condutor" class="btn btn-warning" @click="onClickEditar" >Editar</router-link>
+                        <router-link to="/ListCondutor" class="btn btn-warning" @click="onClickEditar" >Editar</router-link>
                 </div>
                     <div class="col-5">
-                        <router-link to="/Listar-Condutor" class="btn btn-info">Voltar</router-link>
+                        <router-link to="/ListCondutor" class="btn btn-info">Voltar</router-link>
                         
                     </div>
                 </div>
@@ -170,7 +170,7 @@ export default defineComponent({
       this.condutorclient.delete(this.condutor.id)
         .then(sucess => {
           this.condutor = new Condutor()          
-          this.$router.push({ name: 'Listar-condutor' });
+          this.$router.push({ name: 'ListCondutor' });
         })
         .catch(error => {
           this.mensagem.ativo = true;
