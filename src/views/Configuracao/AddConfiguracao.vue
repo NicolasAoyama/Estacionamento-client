@@ -76,7 +76,7 @@
           
           
           <div  v-if="form === undefined"  class="col-12 mb-5 mt-5">
-              <router-link to="/Listar-Configuracao" class="btn btn-success " @click="onClickCadastrar" >Adicionar</router-link>
+              <router-link to="/ListConfiguracao" class="btn btn-success " @click="onClickCadastrar" >Adicionar</router-link>
 
           </div>
           
@@ -84,10 +84,10 @@
           <div v-if="form === 'editar'" class="d-flex justify-content-center ">
               <div class="row ">
                 <div class="col-5">
-                      <router-link to="/Listar-Configuracao" class="btn btn-warning "  @click="onClickEditar" >Editar</router-link>
+                      <router-link to="/ListConfiguracao" class="btn btn-warning "  @click="onClickEditar" >Editar</router-link>
                 </div>
                   <div class="col-5">
-                      <router-link to="/Listar-Configuracao" class="btn btn-info " >Voltar</router-link>
+                      <router-link to="/ListConfiguracao" class="btn btn-info " >Voltar</router-link>
                   </div>
               </div>
 

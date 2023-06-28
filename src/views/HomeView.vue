@@ -36,7 +36,7 @@
           <td>{{entrada.entrada}}</td>
           
           <td>
-            <router-link to="/Recibo" class="btn bg-warning" id="sairButton">
+            <router-link class="btn bg-warning" :to="{ name: 'FinalizarMovimenacao', query: { id: entrada.id }}" >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
               </svg>
@@ -67,7 +67,6 @@ import { Veiculo } from '@/model/Veiculo';
 import { ModeloClient } from '@/client/Modelo.client';
 import { Modelo } from '@/model/Modelo';
 
-
 export default defineComponent({ 
     name: 'MovimentacaoFormulario',
 
@@ -75,6 +74,7 @@ data() {
   return {
       movimentacaoLista: new Array<Movimentacao>(),
       MovimentacaoClient: new MovimentacaoClient(),
+      movimentacaoFinalizar: new Movimentacao(),
       modelo: new Modelo(),
       modeloclient: new ModeloClient(),
       marcaclient: new MarcaClient(),
@@ -91,15 +91,6 @@ data() {
     }
   }
 },
-computed: {
-  id () { 
-    return this.$route.query.id
-  },
-  form () {
-    return this.$route.query.form
-  }
-  
-},
 mounted() { 
 
   this.findAll();
@@ -108,31 +99,36 @@ mounted() {
   
 },
 methods: {
-  findAll() {
-          this.MovimentacaoClient.listAll()
-            .then((sucess: Movimentacao[]) => {
-              this.movimentacaoLista = sucess
-               
-              console.log(this.movimentacaoLista)
-              
-            })
-            .catch((error :any )=> {
-              this.mensagem.ativo = true;
-              this.mensagem.mensagem = error;
-              this.mensagem.titulo = "Error. ";
-              this.mensagem.css = "alert alert-danger alert-dismissible fade show";
-              console.log(error);
-            });
-        }, 
+
+    findAll() {
+      this.MovimentacaoClient.listAll()
+        .then((sucess: Movimentacao[]) => {
+          this.movimentacaoLista = sucess
+          
+          console.log(this.movimentacaoLista)
+          
+        })
+        .catch((error :any )=> {
+          this.mensagem.ativo = true;
+          this.mensagem.mensagem = error;
+          this.mensagem.titulo = "Error. ";
+          this.mensagem.css = "alert alert-danger alert-dismissible fade show";
+          console.log(error);
+        });
+    },    
+
+    
+    
+
+
+
+
+  }
   
   
 
 
- }
-
-
-
- })
+ });
 
 
 
@@ -161,4 +157,5 @@ methods: {
     color: transparent;
 }
   </style>
+  
   

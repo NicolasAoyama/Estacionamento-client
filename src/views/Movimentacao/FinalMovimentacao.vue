@@ -144,7 +144,7 @@
                 <button type="button" class="btn btn-primary mt-4 col-6" data-bs-toggle="modal" data-bs-target="#modalRecibo">Imprimir Recibo</button>
              </div>
             <div class="row justify-content-center mt-2">
-                <router-link to="/Movimentacao" class="btn btn-primary-voltar mt-4 col-6">Voltar</router-link>
+                <router-link to="/ListMovimentacao" class="btn btn-primary-voltar mt-4 col-6">Voltar</router-link>
             </div>
         </div>
         

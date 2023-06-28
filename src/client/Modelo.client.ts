@@ -15,12 +15,18 @@ export class ModeloClient {
 
     public  async findbyid(id:number) : Promise<Modelo>{
         try{
-            return (await this.axiosClient.get<Modelo> (`/${id}`)).data
+            return (await this.axiosClient.get<Modelo>("",{params:{id}})).data
         }
         catch(error: any){
             return Promise.reject(error.response)
         }
     }
+
+
+
+
+
+
 
     public  async listAll() : Promise<Modelo[]>{
         try{

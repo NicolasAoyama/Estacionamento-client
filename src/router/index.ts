@@ -90,13 +90,13 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '/AddModelo',
-        name: 'EditarModelo',
+        name: 'AddModelo-Editar',
         component: () => import(/* webpackChunkName: "about" */ '../views/Modelo/AddModelo.vue')
 
       },
       {
         path: '/AddModelo',
-        name: 'ExcluirModelo',
+        name: 'AddModelo-Excluir',
         component: () => import(/* webpackChunkName: "about" */ '../views/Modelo/AddModelo.vue')
 
       },
@@ -137,6 +137,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/FinalMovimentacao',
     name: 'FinalMovimentacao',
     component: () => import(/* webpackChunkName: "about" */ '../views/Movimentacao/FinalMovimentacao.vue')
+  },
+  {
+    path: '/FinalizarMovimenacao',
+    name: 'FinalizarMovimenacao',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Movimentacao/FinalizarMovimentacao.vue'),
   }
 ]
 

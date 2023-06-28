@@ -1,98 +1,235 @@
 <template>
-    <div class="container mt-5 bg-dark">
-      <h1 class="display-4 custom-text-color">Registrar Entrada</h1>
-      <form class="form-inline">
-        <div class="row mt-4 mb-4 justify-content-center">
-          <div class="row col-12 justify-content-center">
+  <div class="container mt-5 bg-dark">
+    <h1 class="display-4 custom-text-color">Registrar Entrada</h1>
+    <form class="form-inline">
+      <div class="row mt-4 mb-4 justify-content-center">
+        <div class="row col-12 justify-content-center">
+          
+          <div class="row justify-content-center">
             
-            <div class="row justify-content-center">
-              <div class="col-6">
-                <input type="text" class="form-control col-6" id="cpf" placeholder="Digite o CPF do condutor..." maxlength="14">
-              </div>
+            <div class=" col-6 row justify-content-center">
+
+              <label class="form-label text-color">Condutor</label>
+
+              <select v-model="movimentacao.condutor" class="form-select" aria-label="Default select example">
+
+                  <option v-for="condutor in condutorAtivo " :key="condutor.id" :value="condutor"   selected>{{condutor.nomeCondutor}}</option>
+
+              </select>
+
             </div>
-            <div class="col-2 mt-3">
-              <button class="btn bg-warning"> 
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
-                Pesquisar
-              </button>
-            </div>
-            <div class="col-3 mt-3">
-              <router-link to="/AddCondutor" class="btn btn-success ">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
-                  <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                  <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-                </svg>
-                Cadastrar Condutor
-              </router-link>
-            </div>
+
           </div>
+          
+        </div>
+      </div>
+
+  
+
+      <div class="row mt-4 mb-4 justify-content-center">
+        <div class="row col-12 justify-content-center">
+
+          <div class="col-6 row justify-content-center">
+
+            <label class="form-label text-color">Veiculo</label>
+
+            <select v-model="movimentacao.veiculo"  class="form-select" aria-label="Default select example">
+          
+                <option v-for="veiculo in veiculoAtivo " :key="veiculo.id" :value="veiculo"   selected>{{veiculo.placa}}</option>
+          
+            </select>
+          </div>
+        </div>
+        
+                <div class="col-md-6" >
+                    <label for="inputPlaca" class="form-label text-color">Horario de Entrada</label>
+                    <input type="nome" class="form-control" id="inputPlaca" v-model="movimentacao.entrada">
+                    <label for="inputPlaca" class="form-label text-color">Horario de Saida</label>
+                    <input type="nome" class="form-control" id="inputPlaca" v-model="movimentacao.saida">
+                </div>
+
+
+
+
         </div>
 
-        <div class="row mt-4 mb-4 justify-content-center col-md-6 offset-md-3">
-          <div class="col-5">
-            <input class="form-control" type="text" readonly>
-          </div>
-          <div class="col-5">
-            <input class="form-control" type="text" readonly>
-          </div>
-        </div>
 
-        <div class="row mt-4 mb-4 justify-content-center">
-          <div class="row col-12 justify-content-center">
 
-            <div class="row justify-content-center">
-              <div class="col-6">
-                <input type="text" class="form-control col-2" id="placa" placeholder="Digite a Placa do Veiculo" maxlength="14">
-              </div>
-            </div>
-            <div class="row justify-content-center align-items-center">
-              <div class="col-2 mt-3">
-                <button class="btn bg-warning">  
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                  </svg>
-                  Pesquisar
-                </button>
-              </div>
-              <div class="col-3 mt-3">
-                <router-link to="/AddVeiculo" class="btn btn-success align-items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
-                    <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                    <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
-                  </svg>
-                  Cadastrar Veiculo
-                </router-link>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-4 mb-4 justify-content-center col-md-6 offset-md-3">
-          <div class="col-5">
-            <input class="form-control" type="text" readonly>
-          </div>
-          <div class="col-5">
-            <input class="form-control" type="text" readonly>
-          </div>
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         
+      
 
-      </form>
-      <div class="col-12 mt-6 mb-6">
-        <button class="btn btn-success btn-lg col-6" >Registrar Entrada</button>
-      </div>
+      
+
+    </form>
+    <div class="col-12 mt-6 mb-6">
+      <button class="btn btn-success btn-lg col-6" @click="onClickCadastrar">Registrar Entrada</button>
     </div>
-  </template>
+  </div>
+</template>
+
   
   <script lang="ts">
-  
-  </script>
+  import { defineComponent } from 'vue';
+  import { MovimentacaoClient } from '@/client/Movimentacao.client';
+  import { Movimentacao } from '@/model/Movimentacao';
+  import { VeiculoClient } from '@/client/Veiculo.client';
+ import { Veiculo } from '@/model/Veiculo';
+ import { Condutor } from '@/model/Condutor';
+ import { CondutorClient } from '@/client/Condutor.client';
+ 
+ export default defineComponent({
+  name: 'Veiculo',
 
-  
-  
-  <style>
-  
-  /* Seu estilo CSS aqui */
-  </style>
+  data() {
+    return {
+        movimentacao: new Movimentacao(),
+        MovimentacaoClient: new MovimentacaoClient(),
+        veiculo: new Array<Veiculo>(),
+        VeiculoClient: new VeiculoClient(),
+        
+       condutor: new Array<Condutor>(),
+       condutorclient: new CondutorClient(),
+        
+        mensagem: {
+        ativo: false as boolean,
+        titulo: "" as string,
+        mensagem: "" as string,
+        css: "" as string
+      }
+    }
+  },
+  computed: {
+    id () {
+      return this.$route.query.id
+    },
+    form () {
+      return this.$route.query.form
+    },
+    veiculoAtivo() :Veiculo[] {
+        return this.veiculo.filter((veiculo: Veiculo) => veiculo.ativo);
+  },
+  condutorAtivo() :Condutor[] {
+        return this.condutor.filter((condutor: Condutor) => condutor.ativo);
+  }
+    
+  },
+  mounted() { 
+    if (this.id !== undefined)
+    {
+        this.findbyId(Number(this.id));
+        
+    };
+
+    this.findAllVeiculo();
+    this.findAllCondutor();
+
+  },
+  methods: {
+   
+    findAllVeiculo() {
+      this.VeiculoClient.listAll()
+        .then((sucess: Veiculo[]) => {
+          
+          this.veiculo = sucess
+          console.log(Veiculo)
+
+          
+        })
+        .catch((error :any )=> {
+          console.log(error);
+        });
+    },
+    findAllCondutor() {
+      this.condutorclient.listAll()
+        .then((sucess: Condutor[]) => {
+          
+          this.condutor = sucess
+          console.log(Condutor)
+
+          
+        })
+        .catch((error :any )=> {
+          console.log(error);
+        });
+    },
+
+    onClickCadastrar(){
+        this.MovimentacaoClient.cadastrar(this.movimentacao)
+        .then(sucess => {
+          this.movimentacao = new Movimentacao();
+          this.findAllVeiculo();
+          this.findAllCondutor();
+
+          console.log(Movimentacao)
+          
+        })
+        .catch(error => {
+          this.mensagem.ativo = true;
+          this.mensagem.mensagem = error;
+          this.mensagem.titulo = "Error. ";
+          this.mensagem.css = "alert alert-danger alert-dismissible fade show";
+        });
+    },
+
+    findbyId(id: number){
+      this.MovimentacaoClient.findbyid(id)
+        .then(sucess => {
+          this.movimentacao = sucess;
+          this.findAllVeiculo();
+          
+        })
+        .catch(error => {
+          this.mensagem.ativo = true;
+          this.mensagem.mensagem = error;
+          this.mensagem.titulo = "Error. ";
+          this.mensagem.css = "alert alert-danger alert-dismissible fade show";
+        });
+    }, 
+    VeiculoSelecionado(){
+      const veiculoEscolhido = this.movimentacao.veiculo 
+      if( veiculoEscolhido){
+        this.movimentacao.veiculo.modelo.nomeModelo = veiculoEscolhido.modelo.nomeModelo
+        this.movimentacao.veiculo.modelo.marca.nomeMarca = veiculoEscolhido.modelo.marca.nomeMarca
+        console.log(this.movimentacao.veiculo.modelo.nomeModelo)
+        console.log(this.movimentacao.veiculo.modelo.marca.nomeMarca)
+      } else{
+        this.movimentacao.veiculo.modelo.nomeModelo = '';
+        this.movimentacao.veiculo.modelo.marca.nomeMarca = '';
+
+      }
+
+    }
+   
+
+
+  }
+});
+
+    
+    </script>
+    
+
+    
+    
+    <style>
+    
+    /* Seu estilo CSS aqui */
+    </style>

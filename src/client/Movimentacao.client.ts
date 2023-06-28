@@ -15,7 +15,7 @@ export class MovimentacaoClient {
 
     public  async findbyid(id:number) : Promise<Movimentacao>{
         try{
-            return (await this.axiosClient.get<Movimentacao> (`/${id}`)).data
+            return (await this.axiosClient.get<Movimentacao>("",{params:{id}})).data
         }
         catch(error: any){
             return Promise.reject(error.response)
@@ -59,9 +59,9 @@ export class MovimentacaoClient {
         }
     }
 
-    public async finalizar (id: number, movimentacao: Movimentacao) :Promise<string>{
+    public async finalizar (id: number) :Promise<string>{
         try {
-            return (await this.axiosClient.put<string>(`/finalizar/${id}`, movimentacao)).data
+            return (await this.axiosClient.put<string>(`/finalizar?id=${id}`)).data
             
         } catch (error: any) {
             return Promise.reject(error.response)   

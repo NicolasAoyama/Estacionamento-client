@@ -15,7 +15,7 @@ export class VeiculoClient {
 
     public  async findbyid(id:number) : Promise<Veiculo>{
         try{
-            return (await this.axiosClient.get<Veiculo> (`/${id}`)).data
+            return (await this.axiosClient.get<Veiculo>("",{params:{id}})).data
         }
         catch(error: any){
             return Promise.reject(error.response)
